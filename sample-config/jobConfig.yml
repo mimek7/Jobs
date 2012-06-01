@@ -12,26 +12,26 @@
 
 Jobs:
   # must be one word
-  Woodcutter:
+  Gastwirt:
     # full name of the job (displayed when browsing a job, used when joining and leaving)
     # also can be used as a prefix for the user's name if the option is enabled.
     # Shown as a prefix only when the user has 1 job.
     #
     # NOTE: Must be 1 word
-    fullname: Woodcutter
+    fullname: Gastwirt
     # Shortened version of the name of the job. Used as a prefix when the user has more 
     # than 1 job
-    shortname: W
+    shortname: Gastwirt
     # The colour of the name, for a full list of supported colours, go to the message config.
-    ChatColour: GREEN
+    ChatColour: BROWN
     # Option to let you choose what kind of prefix this job adds to your name.
     # options are: full, title, job, shortfull, shorttitle, shortjob and none
     chat-display: full
     # [OPTIONAL] - the maximum level of this class
-    #max-level: 10
+    #max-level: 30
     # [OPTIONAL] - the maximum number of users on the server that can have this job at 
     # any one time (includes offline players).
-    #slots: 1
+    #slots: 3
     # Equation used for calculating how much experience is needed to go to the next level.
     # Available parameters:
     #   numjobs - the number of jobs the player has
@@ -96,14 +96,14 @@ Jobs:
       # block name/id (with optional sub-type)
       LOG:
         # base income
-        income: 5.0
+        income: 0.0
         # base experience
-        experience: 5.0
+        experience: 0.0
     # payment for placing a block
     Place:
       SAPLING: 
-        income: 1.0
-        experience: 1.0
+        income: 2.0
+        experience: 2.0
       WOOD: 
         income: 2.0
         experience: 2.0
@@ -112,17 +112,17 @@ Jobs:
       # mob name
       Player:
         # base income
-        income: 7.5
+        income: 0.5
         # base experience
-        experience: 7.5
+        experience: 0.5
     # killing a jobs class
     custom-kill:
       # full name of the jobs class
-      Woodcutter:
+      Krieger:
         # base income
         income: 10.0
         # base experience
-        experience: 10.0
+        experience: -5.0
     # permissions granted for joining class
     permissions:
       # example node
@@ -135,68 +135,68 @@ Jobs:
         value: true
         # Permission granted when reaching level 10
         level: 10
-  Miner:
-    fullname: Miner
-    shortname: M
+  Minenarbeiter:
+    fullname: Minenarbeiter
+    shortname: Minenarbeiter
     ChatColour: DARK_GRAY
     chat-display: full
-    #max-level: 10
-    #slots: 10
+    #max-level: 30
+    #slots: 5
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
     Break:
       STONE:
+        income: 0.5
+        experience: 0.5
+      COAL_ORE:
+        income: 1.0
+        experience: 1.0
+      REDSTONE_ORE:
+        income: 1.5
+        experience: 1.5
+      IRON_ORE: 
+        income: 1.5
+        experience: 1.5
+      GOLD_ORE:
         income: 2.0
         experience: 2.0
-      COAL_ORE:
-        income: 3.0
-        experience: 3.0
-      REDSTONE_ORE:
-        income: 3.0
-        experience: 3.0
-      IRON_ORE: 
+      LAPIS_ORE:
+        income: 2.0
+        experience: 2.0
+      DIAMOND_ORE:
         income: 4.0
         experience: 4.0
-      GOLD_ORE:
-        income: 5.0
-        experience: 5.0
-      LAPIS_ORE:
-        income: 5.0
-        experience: 5.0
-      DIAMOND_ORE:
-        income: 6.0
-        experience: 6.0
       OBSIDIAN: 
-        income: 7.5
-        experience: 7.5
+        income: 5.0
+        experience: 5.0
       MOSSY_COBBLESTONE:
-        income: 6.0
-        experience: 6.0
+        income: 3.0
+        experience: 3.0
     Place:
       RAILS:
-        income: 2.0
-        experience: 2.0
+        income: -2.0
+        experience: -2.0
       IRON_ORE:
-        income: -5.0
-        experience: -5.0
+        income: -2.0
+        experience: -2.0
       GOLD_ORE:
-        income: -6.0
-        experience: -6.0
+        income: -2.0
+        experience: -2.0
     Kill:
       Player:
-        income: 7.5
-        experience: 7.5
+        income: 0.5
+        experience: 0.5
     custom-kill:
-      Miner:
+      Krieger:
         income: 10.0
-        experience: 10.0
-  Builder:
-    fullname: Builder
-    shortname: B
-    ChatColour: WHITE
+        experience: -10.0
+  Baumeister:
+    fullname: Baumeister
+    shortname: Baumeister
+    ChatColour: YELLOW
     chat-display: full
-    #max-level: 10
+    #max-level: 30
     #slots: 10
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
@@ -261,50 +261,50 @@ Jobs:
         income: 7.5
         experience: 7.5
     custom-kill:
-      Builder:
+      Krieger:
         income: 10.0
-        experience: 10.0
-  Digger:
-    fullname: Digger
-    shortname: D
+        experience: -10.0
+  Bankier:
+    fullname: Bankier
+    shortname: Bankier
     ChatColour: GOLD
     chat-display: full
-    #max-level: 10
-    #slots: 10
+    #max-level: 5
+    #slots: 5
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
     Break:
       DIRT:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       GRASS:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       GRAVEL:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       SAND:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       CLAY:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
     Kill:
       Player:
-        income: 7.5
-        experience: 7.5
+        income: 2.5
+        experience: 2.5
     custom-kill:
-      Digger:
+      Krieger:
         income: 10.0
-        experience: 10.0
-  Farmer:
-    fullname: Farmer
-    shortname: Fa
-    ChatColour: BLUE
+        experience: -10.0
+  Landwirt:
+    fullname: Landwirt
+    shortname: Landwirt
+    ChatColour: GREEN
     chat-display: full
-    #max-level: 10
-    #slots: 10
+    #max-level: 30
+    #slots: 7
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
@@ -324,18 +324,18 @@ Jobs:
         experience: 1.0
     Kill:
       Player:
-        income: 7.5
-        experience: 7.5
+        income: 2.5
+        experience: 2.5
     custom-kill:
-      Farmer:
+      Krieger:
         income: 10.0
-        experience: 10.0
-  Hunter:
-    fullname: Hunter
-    shortname: H
+        experience: -10.0
+  Krieger:
+    fullname: Krieger
+    shortname: Krieger
     ChatColour: RED
     chat-display: full
-    #max-level: 10
+    #max-level: 30
     #slots: 10
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
@@ -372,27 +372,27 @@ Jobs:
         income: 7.5
         experience: 7.5
     custom-kill:
-      Woodcutter:
+      Schmied:
         income: 10.0
         experience: 10.0
-      Miner:
+      Bankier:
         income: 10.0
         experience: 10.0
-      Digger:
+      Priester:
         income: 10.0
         experience: 10.0
-      Farmer:
+      Kurier:
         income: 10.0
         experience: 10.0
-      Builder:
+      Baumeister:
         income: 10.0
         experience: 10.0
-      Hunter:
+      Krieger:
         income: 20.0
         experience: 20.0
-  Fisherman:
-    fullname: Fisherman
-    shortname: Fi
+  Kurier:
+    fullname: Kurier
+    shortname: Kurier
     ChatColour: AQUA
     chat-display: full
     #max-level: 10
@@ -406,19 +406,19 @@ Jobs:
         experience: 4.0
     Kill:
       Player:
-        income: 7.5
-        experience: 7.5
+        income: 0.5
+        experience: 0.0
     custom-kill:
-      Fisherman:
+      Krieger:
         income: 10.0
-        experience: 10.0
-  Weaponsmith:
-    fullname: Weaponsmith
-    shortname: W
+        experience: -10.0
+  Schmied:
+    fullname: Schmied
+    shortname: Schmied
     ChatColour: DARK_PURPLE
     chat-display: full
-    #max-level: 10
-    #slots: 10
+    #max-level: 30
+    #slots: 5
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
@@ -442,9 +442,9 @@ Jobs:
       GOLD_INGOT:
         income: 2.0
         experience: 2.0
-  Brewer:
-    fullname: Brewer
-    shortname: Br
+  Priester:
+    fullname: Priester
+    shortname: Priester
     ChatColour: LIGHT_PURPLE
     chat-display: full
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
@@ -452,42 +452,42 @@ Jobs:
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
     Brew:
       NETHER_STALK:
-        income: 1.0
-        experience: 1.0
+        income: 0.0
+        experience: 0.0
       REDSTONE_DUST:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       GLOWSTONE_DUST:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       SPIDER_EYE:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       FERMENTED_SPIDER_EYE:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       BLAZE_POWDER:
-        income: 2.0
-        experience: 2.0
+        income: 0.0
+        experience: 0.0
       SUGAR:
-        income: 2.0
-        experience: 2.0
+        income: 2.5
+        experience: 2.5
       SPECKLED_MELON:
-        income: 4.0
-        experience: 4.0
+        income: 0.0
+        experience: 0.0
       MAGMA_CREAM:
-        income: 4.0
-        experience: 4.0
+        income: 0.0
+        experience: 0.0
       GHAST_TEAR:
-        income: 4.0
-        experience: 4.0
-  Enchanter:
-    fullname: Enchanter
-    shortname: E
+        income: 0.0
+        experience: 0.0
+  Druide:
+    fullname: Druide
+    shortname: Druide
     ChatColour: DARK_BLUE
     chat-display: full
-    #max-level: 10
-    #slots: 10
+    #max-level: 20
+    #slots: 4
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
@@ -504,16 +504,16 @@ Jobs:
       DIAMOND_SWORD:
         income: 10.0
         experience: 10.0
-  None:
-    fullname: None
-    shortname: N
+  Tagelöhner:
+    fullname: Tagelöhner
+    shortname: Tagelöhner
     ChatColour: WHITE
     chat-display: none
-    #max-level: 10
-    #slots: 10
+    #max-level: 5
+    #slots: 5
     leveling-progression-equation: 100*((1.13+(0.01*(numjobs-1)))^(joblevel-1))
     income-progression-equation: baseincome*((1.05)^(joblevel-1))
     experience-progression-equation: baseexperience*((1.05)^(joblevel-1))
     Kill:
       Player:
-        income: 7.5
+        income: 0.0
